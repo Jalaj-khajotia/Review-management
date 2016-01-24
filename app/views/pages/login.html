@@ -1,30 +1,82 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-4 col-md-offset-4">
-            <div class="login-panel panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Please Sign In</h3>
-                </div>
-                <div class="panel-body">
-                    <form role="form">
-                        <fieldset>
-                            <div class="form-group">
-                                <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" placeholder="Password" name="password" type="password" value="">
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input name="remember" type="checkbox" value="Remember Me">Remember Me
-                                </label>
-                            </div>
-                            <!-- Change this to a button or input when using this as a form -->
-                            <a ui-sref="dashboard.home" class="btn btn-lg btn-success btn-block">Login</a>
-                        </fieldset>
-                    </form>
-                </div>
-            </div>
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header" align="center">
+            <img class="img-circle" id="img_logo" src="images/logo.jpg">
+            <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        </button> -->
         </div>
+        <!-- Begin # DIV Form -->
+        <div id="div-forms">
+            <!-- Begin # Login Form -->
+            <form id="login-form">
+                <div class="modal-body">
+                    <div id="div-login-msg">
+                        <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                        <span id="text-login-msg">Type your username and password.</span>
+                    </div>
+                    <input id="login_username" class="form-control" type="text" placeholder="Username (type ERROR for error effect)" required>
+                    <input id="login_password" class="form-control" type="password" placeholder="Password" required>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> Remember me
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div>
+                       <a ui-sref="dashboard.home" class="btn btn-lg btn-primary btn-block">Login</a>
+                    </div>
+                    <div>
+                        <button id="login_lost_btn" type="button" class="btn btn-link">Lost Password?</button>
+                        <!--    <button id="login_register_btn" type="button" class="btn btn-link">Register</button> -->
+                    </div>
+                </div>
+            </form>
+            <!-- End # Login Form -->
+            <!-- Begin | Lost Password Form -->
+            <form id="lost-form" style="display:none;">
+                <div class="modal-body">
+                    <div id="div-lost-msg">
+                        <div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
+                        <span id="text-lost-msg">Type your e-mail.</span>
+                    </div>
+                    <input id="lost_email" class="form-control" type="text" placeholder="E-Mail (type ERROR for error effect)" required>
+                </div>
+                <div class="modal-footer">
+                    <div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Send</button>
+                    </div>
+                    <div>
+                        <button id="lost_login_btn" type="button" class="btn btn-link">Log In</button>
+                        <button id="lost_register_btn" type="button" class="btn btn-link">Register</button>
+                    </div>
+                </div>
+            </form>
+            <!-- End | Lost Password Form -->
+            <!-- Begin | Register Form -->
+            <form id="register-form" style="display:none;">
+                <div class="modal-body">
+                    <div id="div-register-msg">Q
+                        <div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
+                        <span id="text-register-msg">Register an account.</span>
+                    </div>
+                    <input id="register_username" class="form-control" type="text" placeholder="Username (type ERROR for error effect)" required>
+                    <input id="register_email" class="form-control" type="text" placeholder="E-Mail" required>
+                    <input id="register_password" class="form-control" type="password" placeholder="Password" required>
+                </div>
+                <div class="modal-footer">
+                    <div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
+                    </div>
+                    <div>
+                        <button id="register_login_btn" type="button" class="btn btn-link">Log In</button>
+                        <button id="register_lost_btn" type="button" class="btn btn-link">Lost Password?</button>
+                    </div>
+                </div>
+            </form>
+            <!-- End | Register Form -->
+        </div>
+        <!-- End # DIV Form -->
     </div>
 </div>

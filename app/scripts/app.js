@@ -13,6 +13,7 @@ angular
     'ui.router',
     'ui.bootstrap',
     'angular-loading-bar',
+    'ngCookies'
   ])
   .config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider',function ($stateProvider,$urlRouterProvider,$ocLazyLoadProvider) {
     
@@ -27,12 +28,14 @@ angular
       .state('dashboard', {
         url:'/dashboard',
         templateUrl: 'views/dashboard/main.html',
+         controller: 'DashboardCtrl',
         resolve: {
             loadMyDirectives:function($ocLazyLoad){
                 return $ocLazyLoad.load(
                 {
                     name:'sbAdminApp',
                     files:[
+                    'scripts/controllers/dash-controller.js',
                     'scripts/directives/header/header.js',
                     'scripts/directives/header/header-notification/header-notification.js',
                     'scripts/directives/sidebar/sidebar.js',
@@ -77,12 +80,13 @@ angular
       .state('dashboard.home',{
         url:'/home',
         controller: 'MainCtrl',
-        templateUrl:'views/dashboard/home.html',
+        templateUrl:'views/dashboard/newdash.html',
         resolve: {
           loadMyFiles:function($ocLazyLoad) {
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
+              'styles/dashboard.css',
               'scripts/controllers/main.js',
               'scripts/directives/timeline/timeline.js',
               'scripts/directives/notifications/notifications.js',
