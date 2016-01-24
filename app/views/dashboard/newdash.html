@@ -1,13 +1,13 @@
-<div >
+<div>
     <div id="dropdown" class="search-tool">
-        <button onclick="myFunction()" class="dropbtn">
+        <button ng-click="myFunction()" class="dropbtn">
             <input type="checkbox" id="hacky-input">
             <label for="hacky-input">
-                <img class="crossRotate" src="downArrow.png" /></label>&nbsp;&nbsp;by Type</button>
-        <div id="myDropdown" class="dropdown-content">
-            <a href="by Name.html">by Name</a>
-            <a href="#">by Oder id</a>
-            <a href="#">by Mobile Number</a>
+                <img class="crossRotate" src="images/downArrow.png" /></label>&nbsp;&nbsp;{{searchOption}}</button>
+        <div id="myDropdown" class="dropdown-content" ng-show="isDropDownVisible" ng-click="dropdownClicked()">
+            <a ng-click="OptionSelected('3')" >by Name</a>
+            <a ng-click="OptionSelected('1')" >by Order id</a>
+            <a ng-click="OptionSelected('2')" >by Mobile Number</a>
         </div>
     </div>
     <div class="box search-tool">
@@ -15,11 +15,9 @@
             <div id="button_SearchBar">
                 <input type="search" id="search" placeholder="Search..." />
             </div>
-            <a href="Consumer Template.html">
-                <button class="icon">
-                    <img src="ic_search_48px-128.png" width="35" height="35" />
-                    <i class="fa fa-search"></i></button>
-            </a>
+            <button class="icon">
+                <img src="images/ic_search_48px-128.png" width="35" height="35" />
+                <i class="fa fa-search"></i></button>
         </div>
     </div>
 </div>
