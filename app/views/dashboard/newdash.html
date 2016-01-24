@@ -1,0 +1,23 @@
+<div>
+    <div id="dropdown" class="search-tool">
+        <button ng-click="myFunction()" class="dropbtn">
+            <input type="checkbox" id="hacky-input">
+            <label for="hacky-input">
+                <img class="crossRotate" src="images/downArrow.png" /></label>&nbsp;&nbsp;{{searchOption}}</button>
+        <div id="myDropdown" class="dropdown-content" ng-show="isDropDownVisible" ng-click="dropdownClicked()">
+            <a ng-click="OptionSelected('3')" >by Name </a>
+            <a ng-click="OptionSelected('1')" >by Order id</a>
+            <a ng-click="OptionSelected('2')" >by Mobile Number</a>
+        </div>
+    </div>
+    <div class="box search-tool">
+        <div class="container-4" style="padding-left:350px !important;">
+            <div id="button_SearchBar">
+                <input type="search" id="search" placeholder="Search..." />
+            </div>
+            <button class="icon">
+                <img src="images/ic_search_48px-128.png" width="35" height="35" />
+               <!-- <i class="fa fa-search"></i></button>-->
+        </div>
+    </div>
+</div>
