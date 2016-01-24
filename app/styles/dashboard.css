@@ -9,6 +9,7 @@
     }
     
     .container-4 input#search {
+        position: absolute;
         width: 600px;
         height: 50px;
         background: #2b303b;
