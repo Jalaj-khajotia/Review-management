@@ -30,8 +30,7 @@ angular.module('sbAdminApp')
     $scope.isDropDownVisible = false;
 
     $scope.OptionSelected = function(val){
-    	$scope.isDropDownVisible = false;
-    	if(val == "1"){
+    	  	if(val == "1"){
     		$scope.searchOption = "by Name";    		
     	} else if(val == "2"){
     		$scope.searchOption = "by Order id";
@@ -41,6 +40,6 @@ angular.module('sbAdminApp')
     	console.log(val);
     }
     $scope.dropdownClicked = function(){
-    	 $scope.isDropDownVisible = !  $scope.isDropDownVisible;
+    	 document.getElementById("myDropdown").classList.toggle("show");
     }
   });
