@@ -15,14 +15,14 @@ angular
     'angular-loading-bar',
     'ngCookies'
   ])
-  .config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider',function ($stateProvider,$urlRouterProvider,$ocLazyLoadProvider) {
+  .config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', function ($stateProvider,$urlRouterProvider,$ocLazyLoadProvider) {
     
     $ocLazyLoadProvider.config({
       debug:false,
       events:true,
     });
 
-    $urlRouterProvider.otherwise('/dashboard/home');
+    $urlRouterProvider.otherwise('/dashboard/searchuser');
 
     $stateProvider
       .state('dashboard', {
@@ -86,12 +86,29 @@ angular
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
+              
               'styles/dashboard.css',
               'scripts/controllers/main.js',
               'scripts/directives/timeline/timeline.js',
               'scripts/directives/notifications/notifications.js',
               'scripts/directives/chat/chat.js',
               'scripts/directives/dashboard/stats/stats.js'
+              ]
+            })
+          }
+        }
+      })
+      .state('dashboard.Customer',{
+        url:'/customer',
+        controller: 'CustomerCtrl',
+        templateUrl:'views/pages/customer.html',
+        resolve: {
+          loadMyFiles:function($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name:'sbAdminApp',
+              files:[              
+              'styles/dashboard.css',
+              'scripts/controllers/csearch-controller.js'
               ]
             })
           }

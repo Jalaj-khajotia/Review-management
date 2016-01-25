@@ -85,7 +85,9 @@ background-color: #eee;
 #page-wrapper{
       top: -50px;  
     position: absolute;
+    margin: 0 0 0 250px !important;
 }
 #page-wrapper.Mainview{
-      margin: 0 0 0 250px !important;
+     
+margin: 0 0 0 50px !important;
 }
