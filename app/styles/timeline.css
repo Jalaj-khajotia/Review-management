@@ -52,7 +52,7 @@
 }
 
 .timeline > li > .timeline-panel:before {
-    content: " ";
+   
     display: inline-block;
     position: absolute;
     top: 26px;
