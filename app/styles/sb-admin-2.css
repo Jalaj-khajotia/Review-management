@@ -38,9 +38,18 @@ body {
     margin-right: 15px;
 }
 
+/*
 .navbar-top-links li a {
     padding: 15px;
     min-height: 50px;
+}
+*/
+.nav>li>a {
+    padding: 0px 15px;
+}
+nav.navbar.navbar-default.navbar-static-top {
+    color: #fff;
+    background-color: #ee6e73;
 }
 
 .navbar-top-links .dropdown-menu li {

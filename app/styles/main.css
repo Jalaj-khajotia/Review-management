@@ -91,3 +91,18 @@ background-color: #eee;
      
 margin: 0 0 0 50px !important;
 }
+.dropdown-toggle > .fa{
+    height:20px;
+}
+.card.large{
+    height: 400px;
+}
+.card-image{
+    max-height: 70%;
+}
+.star-rating{
+    margin: 15px 0px 0 15px;
+}
+.card .card-content {
+    padding: 10px 20px !important;
+}

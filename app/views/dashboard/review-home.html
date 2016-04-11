@@ -1,0 +1,52 @@
+<div class="row" ng-repeat="product in reviews">
+    <div class="col s12 m8">
+        <h4 class="light">{{product.name}}</h4>
+        <div class="card large">
+            <div class="card-image">
+                <img ng-src="{{product.image}}">
+                <span class="card-title">{{product.name}}e</span>
+            </div>
+            <div ng-repeat="review in product.Reviews">
+            <div ng-init="rating = star.rating +4"></div>
+            <div class="star-rating" star-rating rating-value="rating" data-max="5" on-rating-selected="rateFunction(rating)"></div>
+            <div class="card-content">
+                <h6>{{review.name}}</h6>
+                <p>{{review.description}}</p>
+            </div>
+            </div>
+
+         <!--   <div class="card-action">
+                <a href="#">This is a link</a>
+                <a href="#">This is a link</a>
+            </div>-->
+        </div>
+    </div>
+    <div class="col s12 m4">
+        <br><br>
+        <p class="caption">
+            The Large Card limits the height of the card to 500px.
+        </p>
+    </div>
+</div>
+<!--<div class="col s12 m7">
+    <h2 class="header">{{product.name}}</h2>
+    <div class="card" style="overflow: hidden;">
+        <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" ng-src="{{product.image}}">
+        </div>
+        <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">{{product.name}}<i class="material-icons right">more_vert</i></span>
+
+            <p><a href="#!">Reviews</a></p>
+        </div>
+        <div class="card-reveal" style="transform: translateY(0px); display: none;">
+            <span class="card-title grey-text text-darken-4">{{product.name}}<i class="material-icons right">close</i></span>
+            <div ng-repeat="review in product.Reviews">
+                <div ng-init="rating = star.rating +4"></div>
+                <div class="star-rating" star-rating rating-value="rating" data-max="5" on-rating-selected="rateFunction(rating)"></div>
+
+                <p>{{review.description}}</p>
+            </div>   </div>
+    </div>
+</div>-->
+
