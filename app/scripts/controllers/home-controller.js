@@ -7,21 +7,32 @@
  * Controller of the sbAdminApp
  */
 angular.module('sbAdminApp')
-    .controller('MainCtrl', ['$scope', '$position', '$http', function($scope, $position, $http) {
+    .controller('HomeCtrl', ['$scope', '$position', '$http', function($scope, $position, $http) {
         $scope.myFunction = function() {
             document.getElementById("myDropdown").classList.toggle("show");
             // $scope.dropdownClicked();
         }
+        function GetData(){
+            $http.get("http://localhost:8000/tasks")
+                .success(function(data) {
+                    console.log(data);
+                    $scope.reviews = data;
+                })
+                .error(function(data, status, headers, config) {
+                    console.log(status + " Data: " + data);
+                });
+        }
+        GetData();
 
         $scope.$watch('searchdata', function(newValue, oldValue) {
             $scope.search(newValue);
             //do something
         });
         $scope.search = function(key) {
-            $http.defaults.headers.common['Content-Type'] = 'application/json';
+          /*  $http.defaults.headers.common['Content-Type'] = 'application/json';
             $http.defaults.headers.common['x-access-token'] = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NTM5ODEzMTY2MDl9.PIJUtjcvZXmu_zxFh6KeU3aikXRyDcpop2MAMM_sQas';
-
-            $http.get('http://localhost:8500/api/v1/product/' + key)
+*/
+          /*  $http.get('http://localhost:8500/api/v1/product/' + key)
                 .then(function(response) {
                     $scope.searchResult = [];
                     if (response.data.length > 0) {
@@ -32,7 +43,7 @@ angular.module('sbAdminApp')
                 }, function(error) {
                     $scope.searchResult = [];
                     console.log(error.data);
-                });
+                });*/
         }
 
 

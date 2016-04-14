@@ -13,8 +13,7 @@ angular
         'ui.router',
         'ui.bootstrap',
         'angular-loading-bar',
-        'ngCookies',
-        'RatingTutorial'
+        'ngCookies'
     ])
     .config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
 
@@ -73,7 +72,7 @@ angular
             })
             .state('dashboard.home', {
                 url: '/home',
-                controller: 'MainCtrl',
+                controller: 'HomeCtrl',
                 templateUrl: 'views/dashboard/review-home.html',
                 resolve: {
                     loadMyFiles: function($ocLazyLoad) {
@@ -82,7 +81,7 @@ angular
                             files: [
 
                                 'styles/dashboard.css',
-                                'scripts/controllers/main.js',
+                                'scripts/controllers/home-controller.js',
                                 'scripts/directives/timeline/timeline.js',
                                 'scripts/directives/notifications/notifications.js',
                                 'scripts/directives/chat/chat.js',
@@ -125,6 +124,20 @@ angular
                         return $ocLazyLoad.load({
                             name: 'sbAdminApp',
                             files: [ 'scripts/controllers/login-controller.js'
+                            ]
+                        })
+                    }
+                }
+            })
+            .state('dashboard.review-detail',{
+                templateUrl: 'views/pages/review-detail.html',
+                url: '/review',
+                controller:'ReviewCtrl',
+                resolve: {
+                    loadMyFiles: function($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'sbAdminApp',
+                            files: [ 'scripts/controllers/review-controller.js'
                             ]
                         })
                     }

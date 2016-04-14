@@ -106,3 +106,20 @@ margin: 0 0 0 50px !important;
 .card .card-content {
     padding: 10px 20px !important;
 }
+#slides_control > div{
+    height: 200px;
+}
+#carasol{
+    margin:auto;
+    width: 600px;
+}
+#slides_control {
+    position:absolute;
+    width: 400px;
+    left:50%;
+    top:20px;
+    margin-left:-200px;
+}
+h6.header{
+    margin-bottom: 10px;
+}

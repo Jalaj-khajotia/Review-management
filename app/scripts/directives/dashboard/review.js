@@ -1,7 +1,7 @@
 /**
  * Created by Jalaj Khajotia on 4/11/2016.
  */
-                                                                            angular.module('RatingTutorial', [])
+angular.module('RatingTutorial', [])
     .controller('RatingCtrl', function($scope) {
         $scope.rating = 5;
         $scope.rateFunction = function(rating) {
