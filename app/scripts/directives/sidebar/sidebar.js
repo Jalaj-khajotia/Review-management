@@ -28,7 +28,7 @@ angular.module('sbAdminApp')
                 $scope.$watch($scope.getWidth, function(newValue, oldValue) {
                     if (newValue >= mobileView) {
                         if (angular.isDefined($cookieStore.get('toggle'))) {
-                            $scope.toggle = !$cookieStore.get('toggle') ? false : true;
+                            $scope.toggle = !$cookieStore.get('toggle') ? true : false;
                             $scope.changeview = !$scope.toggle;
                         } else {
                             $scope.toggle = true;

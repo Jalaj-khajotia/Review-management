@@ -13,12 +13,12 @@ angular.module('sbAdminApp',['graph'])
         $scope.chartTitle = "Customer Happiness Index";
         $scope.chartWidth = 400;
         $scope.chartHeight = 300;
-        $scope.chartData = [
+        $scope.chartData = [ ['Loved it & Recommended', 3],
             ['Manageable', 11],
-            ['Not Satisfied', 4],
             ['Average', 4],
-            ['Dont Buy', 7],
-            ['Loved it & Recommended', 3]
+            ['Not Satisfied', 4],
+            ['Awful', 7]
+
         ];
         $scope.myInterval = 3000;
         $scope.slides = [
