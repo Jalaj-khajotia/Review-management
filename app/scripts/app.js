@@ -131,13 +131,42 @@ angular
             })
             .state('dashboard.review-detail',{
                 templateUrl: 'views/pages/review-detail.html',
-                url: '/review',
+                url: '/review/:key',
                 controller:'ReviewCtrl',
                 resolve: {
                     loadMyFiles: function($ocLazyLoad) {
                         return $ocLazyLoad.load({
                             name: 'sbAdminApp',
                             files: [ 'scripts/controllers/review-controller.js'
+                            ]
+                        })
+                    }
+                }
+            })
+            .state('dashboard.profile',{
+                templateUrl: 'views/pages/profile.html',
+                url: '/profile',
+                controller:'ProfileCtrl',
+                resolve: {
+                    loadMyFiles: function($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'sbAdminApp',
+                            files: [ 'scripts/controllers/profile-controller.js',
+                                'styles/profile.css'
+                            ]
+                        })
+                    }
+                }
+            })
+            .state('dashboard.add-review',{
+                templateUrl: 'views/pages/add-review.html',
+                url: '/add-review',
+                controller:'AddReviewCtrl',
+                resolve: {
+                    loadMyFiles: function($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'sbAdminApp',
+                            files: [ 'scripts/controllers/addreview-controller.js'
                             ]
                         })
                     }

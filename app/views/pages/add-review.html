@@ -1,0 +1,34 @@
+<div class="row" >
+
+    <ul class="collection">
+        <li class="collection-item add-review-head" >Add Your Review now</li>
+    </ul>
+    <form class="col s12">
+        <div class="row">
+            <div class="input-field col s12">
+                <input placeholder="Highlight your Review" id="Review" type="text" class="validate">
+                <label for="Review">Review Headline</label>
+            </div>
+        </div>
+        <div class="row" id="upload-photos">
+            <div class="collection">
+                <div class="collection-item">Upload some product photos</div>
+            </div>
+            <input type="file" id="file" name="file" multiple
+                   onchange="angular.element(this).scope().getFileDetails(this)" />
+
+            <input type="button" ng-click="uploadFiles()" value="Upload" />
+
+            <!--ADD A PROGRESS BAR ELEMENT.-->
+            <p><progress id="pro" value="0"></progress></p>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                <label for="textarea1">Tell us more about your view on product</label>
+            </div> </div>
+
+    </form>
+
+</div>
+

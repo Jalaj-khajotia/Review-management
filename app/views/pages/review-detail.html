@@ -1,14 +1,19 @@
 <div class="row">
     <div class="col s12 m8">
-      <div>
-    <carousel interval="myInterval">
-        <slide ng-repeat="slide in slides" active="slide.active">
-            <img id="carasol" ng-src="{{slide.image}}">
-            <div class="carousel-caption">
-                <h4>Slide {{$index+1}}</h4>
+        <div>
+            <!--  <carousel interval="myInterval">
+       <slide ng-repeat="slide in slides" active="slide.active">
+           <img id="carasol" ng-src="{{slide.image}}">
+           <div class="carousel-caption">
+               <h4>Slide {{$index+1}}</h4>
+           </div>
+       </slide>
+   </carousel> -->
+            <div class="carousel carousel-slider" style="height:410px">
+                <div ng-repeat="prdt in product.Images">
+                    <a class="carousel-item"><img ng-src="{{prdt.url}}"></a>
+                </div>
             </div>
-        </slide>
-    </carousel>
         </div>
     </div>
     <div class="col s12 m4">
@@ -41,55 +46,44 @@
     </div>
 </div>-->
 <div class="row">
-    <div class="col s6">
-        <h6 class="header" style="padding-left: 10px;" >Cool lookin' Hooded T-Shirt at a very affordable price! <img height="50" src="images/5.png"></h6>
+    <div class="col s6"  ng-repeat="prdt in product.Reviews">
+        <h6 class="header" style="padding-left: 10px;">{{prdt.name}}<div>
+              <img height="30" ng-show="prdt.rating == '1'" src="images/1.png">
+                    <img height="30" ng-show="prdt.rating == '2'" src="images/2.png">
+                    <img height="30" ng-show="prdt.rating == '3'" src="images/3.png">
+                    <img height="30" ng-show="prdt.rating == '4'" src="images/4.png">
+                    <img height="30" ng-show="prdt.rating == '5'" src="images/5.png">
+        </div></h6>
         <div class="card" style="overflow: hidden;height: 300px;">
             <div class="card-image waves-effect waves-block waves-light margin" style="padding: 10px;">
                 <div>
                     <div ng-init="rating = star.rating +4"></div>
-                    <div class="star-rating" star-rating rating-value="rating" data-max="5"
-                         on-rating-selected="rateFunction(rating)"></div>
-                    <div class="row">  <!--<div class="col s4" ng-controller="ReviewCtrl" style="position: relative;margin-top: -40px;margin-left: -78px;">
-                        <pie-chart data="chartData" title="{{chartTitle}}" width="{{chartWidth}}" height="{{chartHeight}}" select="selectRow(selectedRowIndex)"></pie-chart>
-                    </div>-->
-                       <!-- <div class="col s6" style="position: relative; margin-left: 150px;">
-
-                        </div>-->
-                        <p style="height: 219px; ">Bought these shoes for my dad. Purchased for daily purpose only and not for jogging or
-                            running. He used it for couple of days and the shoes are comfortable. They are a little
-                            bit small, but a size bigger would be too big. So I guess it's the proper fit. The shoes
-                            are light in weight and seems will last for a few years if used properly. The shoes are
-                            fresh stock manufactured in March 2015 - my order was April 2015. Overall quite happy
-                            with the purchase. Recommended purchase.</p>
+                    <div class="star-rating" star-rating rating-value="rating" data-max="5" on-rating-selected="rateFunction(rating)"></div>
+                  
+                        <p style="height: 219px; ">{{prdt.description}}</p>
                     </div>
-                </div>
-            </div>
+                </div>          
             <div style="float: right;padding-right: 10px;">
                 <p>Found it helpful</p> <span class="comment"><a href="">Yes</a> </span>or <span class="comment"><a
                     href="">No</a></span>
             </div>
-            <img src="images/dh.jpg" style="height:50px;border-radius: 25px; margin: 0 0 0 25px;">
+            <img src="images/jal.jpg" style="height:50px;border-radius: 25px; margin: 0 0 0 25px;">
         </div>
     </div>
     <div class="col s6">
-        <h6 class="header" style="padding-left: 10px;" >Got as expected <img height="50" src="images/1.png"></h6>
+        <h6 class="header" style="padding-left: 10px;">Got as expected <img height="50" src="images/1.png"></h6>
         <div class="card" style="overflow: hidden;height: 300px;">
             <div class="card-image waves-effect waves-block waves-light margin" style="padding: 10px;">
                 <div>
                     <div ng-init="rating = star.rating +4"></div>
-                    <div class="star-rating" star-rating rating-value="rating" data-max="5"
-                         on-rating-selected="rateFunction(rating)"></div>
-                    <div class="row">  <!--<div class="col s4" ng-controller="ReviewCtrl" style="position: relative;margin-top: -40px;margin-left: -78px;">
+                    <div class="star-rating" star-rating rating-value="rating" data-max="5" on-rating-selected="rateFunction(rating)"></div>
+                    <div class="row">
+                        <!--<div class="col s4" ng-controller="ReviewCtrl" style="position: relative;margin-top: -40px;margin-left: -78px;">
                         <pie-chart data="chartData" title="{{chartTitle}}" width="{{chartWidth}}" height="{{chartHeight}}" select="selectRow(selectedRowIndex)"></pie-chart>
                     </div>-->
                         <!-- <div class="col s6" style="position: relative; margin-left: 150px;">
                          </div>-->
-                        <p style="height: 219px; ">Bought these shoes for my dad. Purchased for daily purpose only and not for jogging or
-                            running. He used it for couple of days and the shoes are comfortable. They are a little
-                            bit small, but a size bigger would be too big. So I guess it's the proper fit. The shoes
-                            are light in weight and seems will last for a few years if used properly. The shoes are
-                            fresh stock manufactured in March 2015 - my order was April 2015. Overall quite happy
-                            with the purchase. Recommended purchase.</p>
+                        <p style="height: 219px; ">Bought these shoes for my dad. Purchased for daily purpose only and not for jogging or running. He used it for couple of days and the shoes are comfortable. They are a little bit small, but a size bigger would be too big. So I guess it's the proper fit. The shoes are light in weight and seems will last for a few years if used properly. The shoes are fresh stock manufactured in March 2015 - my order was April 2015. Overall quite happy with the purchase. Recommended purchase.</p>
                     </div>
                 </div>
             </div>

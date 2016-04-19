@@ -13,7 +13,7 @@ angular.module('sbAdminApp')
             // $scope.dropdownClicked();
         }
         function GetData(){
-            $http.get("http://localhost:8000/tasks")
+            $http.get("http://localhost:8000/products")
                 .success(function(data) {
                     console.log(data);
                     $scope.reviews = data;

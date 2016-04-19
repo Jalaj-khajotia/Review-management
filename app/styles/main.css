@@ -123,3 +123,20 @@ margin: 0 0 0 50px !important;
 h6.header{
     margin-bottom: 10px;
 }
+#club-reviews{
+    max-height: 200px;
+    overflow: hidden;
+}
+.card-content.review-headline{
+  padding:  0px 10px !important;
+}
+.add-review-head{
+    font-size: 25px;
+    color: white;
+    text-align: center;
+/* margin: 20px; */
+    background: royalblue !important;
+}
+#upload-photos{
+    height: 150px;
+}
